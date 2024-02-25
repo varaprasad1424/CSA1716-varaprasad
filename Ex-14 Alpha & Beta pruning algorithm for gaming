@@ -8,12 +8,12 @@ def minimax(depth, nodeIndex, maximizingPlayer,
 		return values[nodeIndex]
 
 	if maximizingPlayer:
-	
+
 		best = MIN
 
 		# Recur for left and right children
 		for i in range(0, 2):
-			
+
 			val = minimax(depth + 1, nodeIndex * 2 + i,
 						False, values, alpha, beta)
 			best = max(best, val)
@@ -22,13 +22,13 @@ def minimax(depth, nodeIndex, maximizingPlayer,
 			# Alpha Beta Pruning
 			if beta <= alpha:
 				break
-		
+
 		return best
-	
+
 	else:
 		best = MAX
 		for i in range(0, 2):
-		
+
 			val = minimax(depth + 1, nodeIndex * 2 + i,
 							True, values, alpha, beta)
 			best = min(best, val)
@@ -37,9 +37,9 @@ def minimax(depth, nodeIndex, maximizingPlayer,
 			# Alpha Beta Pruning
 			if beta <= alpha:
 				break
-		
+
 		return best
-	
+
 # Driver Code
 if __name__ == "__main__":
 
